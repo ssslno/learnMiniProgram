@@ -1,0 +1,3 @@
+<!--pages/home/home.wxml-->
+<text>liujin</text>
+<button class="color" size="mini">添加</button>
