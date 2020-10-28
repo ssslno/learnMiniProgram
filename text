@@ -1,0 +1,152 @@
+法一：open-type="getUserInfo" bindgetuserinfo="方法" //获取用户信息
+法二组件名(只能展示）：<open-data type="userNickName"></open-data>
+
+const app=getApp()//获取App()产生的实例信息
+注册app时 可以：
+1.判断小程序进入场景
+2.生命周期函数
+3.共享全局数据
+
+text组件 换行\n
+decode 解码
+selectable 选中
+
+button
+plain 镂空 
+loading 转圈
+hover-class 
+open-type
+
+view
+类似div 块级 独占一行 
+hover-class
+hover-stay-time
+hover-stop-propagation 阻止冒泡
+
+image（可以写成单标签/双标签
+wx.chooseImage({
+       success:(res)=>{
+         const path=res.tempFilePaths[0]
+        this.setData({
+          imagePath:path
+        })
+lazy-load 
+长按 识别小程序码 show-menu-by-longpress
+
+
+input
+type 弹出键盘类型
+password
+place-holder="请输入内容" 占位符
+confirm-type 
+input绑定事件
+
+scroll-view 局部滚动
+scroll-x 
+scroll-y(要有高度)
+事件 bindscroll
+
+单位rpx自适应
+100px=200rpx
+
+导入css
+@import '路径'
+
+wx:if 
+wx:elif
+wx:else
+
+hidden='{{true}}'
+
+
+wx:for="{{}}"  会自动生成{{item}} {{index}}  加上wx:key=""提高性能
+
+<block></block>包裹作用（用if 和for时） 不会渲染
+
+wx:for-item=""//取别名
+wx:for-index
+
+template为了代码复用(没有用时，不会渲染)
+<template name="">
+<view>{{time}}</view>
+</template>要有name
+
+使用时
+<template is="name" data="{{time:'123}}">
+在其他文件使用时
+<import src="">
+
+wxs
+<wxs module="name">
+//es5语法 要导出
+var message=
+module.exports = {
+  message:message
+
+}
+</wxs>
+在同一文件中使用时
+{{name.message}}
+
+定义在单独的wxs时中，再使用<wxs>标签导入
+<wxs src="../路径" module="name"/>
+
+事件
+bindtap
+某些组件会有自己的事件
+input -bindinput bindblur bindfocus
+scroll-view :binfscrolltowpper ..
+
+bind:touchstart=""
+bind:touchmove
+bind:touchend 
+bind:longpress
+
+事件对象
+event 
+
+组件化开发（组件名不能有大写）
+json文件不能有注释
+
+组件传值
+页面-》组件
+传数据：properties 
+传样式：externalClasses：['','',]
+传标签 ：slot
+
+组件-》页面
+自定义事件
+this.triggerEvent('name',数据)
+页面直接调用组件修改数据的方法
+this.selectComponent('类 id')(类似refs)
+
+slot 
+多插槽 在components-option 添加multipleSlots：true
+
+component构造器
+网络请求
+
+页面跳转
+<navigator url="路径"></navigator>
+属性 open-type="navigateBack" delta="2"
+
+首页跳到详情页
+
+项目：第一步：tabbar
+1.请求轮播图数据
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

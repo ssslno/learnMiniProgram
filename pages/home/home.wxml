@@ -1,3 +1,16 @@
 <!--pages/home/home.wxml-->
-<text>liujin</text>
-<button class="color" size="mini">添加</button>
+<!-- 轮播图 -->
+<w-swiper list="{{banners}}" />
+<!-- 展示数据 -->
+<w-recommend recommends="{{recommends}}" bind:imageload="handleImageLoad"></w-recommend>
+<!-- 展示本周流行 -->
+<view class="popular">
+  <image src="/assets/images/home/recommend_bg.jpg" mode="widthFix"></image>
+</view>
+<!-- tab-control -->
+<w-tab-control titles="{{titles}}" bind:tabclick="handleTabClick" class="{{isTabFixed}}"></w-tab-control> 
+<w-tab-control titles="{{titles}}" wx:if="{{isTabFixed}}"/>
+<!-- 展示商品数据 -->
+<w-goods goods="{{goods[currentType].list}}"></w-goods>
+<!-- 回到顶部 -->
+<w-back-top wx:if="{{showBackTop}}"></w-back-top>
